@@ -7,7 +7,7 @@
 // @license      MIT
 // @grant        none
 // @match        https://www.espn.com/mens-college-basketball/player/*
-// @icon         https://github.com/asecco/espn-cbb-247-recruits/blob/main/icon-64.png
+// @icon         https://github.com/asecco/espn-cbb-247-recruits/raw/main/icon-64.png
 // ==/UserScript==
 
 const getPlayerName = () => {
