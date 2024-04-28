@@ -6,8 +6,7 @@
 <h1 align="center">ESPN CBB 247 Recruits</h1>
 
 <div align="center">
-
-  ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/asecco/espn-cbb-247-recruits/total)
+  
   [![GitHub stars](https://img.shields.io/github/stars/asecco/espn-cbb-247-recruits)](https://github.com/asecco/espn-cbb-247-recruits/stargazers)
   [![GitHub Issues](https://img.shields.io/github/issues/asecco/espn-cbb-247-recruits.svg)](https://github.com/asecco/espn-cbb-247-recruits/issues)
   [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
@@ -21,7 +20,7 @@
 
 ---
 
-<p align="center"> A simple browser extension for passionate CBB fans to access 247Sports HS recruiting info effortlessly!
+<p align="center"> A simple browser script for passionate CBB fans to access 247Sports HS recruiting info effortlessly!
   <br> 
 </p>
   
