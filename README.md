@@ -7,10 +7,9 @@
 
 <div align="center">
 
-  [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/asecco/espn-cbb-247-recruits/total)](https://github.com/asecco/espn-cbb-247-recruits/releases/latest)
-  [![GitHub stars](https://img.shields.io/github/stars/asecco/espn-cbb-247-recruits)](https://github.com/asecco/espn-cbb-247-recruits/stargazers)
-  [![GitHub Issues](https://img.shields.io/github/issues/asecco/espn-cbb-247-recruits.svg)](https://github.com/asecco/espn-cbb-247-recruits/issues)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+  [![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/asecco/espn-cbb-247-recruits/total?style=for-the-badge)](https://github.com/asecco/espn-cbb-247-recruits/releases/latest)
+  [![GitHub stars](https://img.shields.io/github/stars/asecco/espn-cbb-247-recruits?style=for-the-badge)](https://github.com/asecco/espn-cbb-247-recruits/stargazers)
+  [![GitHub Issues](https://img.shields.io/github/issues/asecco/espn-cbb-247-recruits.svg?style=for-the-badge)](https://github.com/asecco/espn-cbb-247-recruits/issues)
 
 </div>
 
@@ -25,7 +24,7 @@
   <br> 
 </p>
   
-<p align="center">Like what you see? Please consider giving ESPN CBB 247 Recruits a GitHub star ⭐, it will help a lot!</p>
+<p align="center">Like what you see? Please consider giving **ESPN CBB 247 Recruits** a GitHub star ⭐, it will help a lot!</p>
 
 ## Getting Started
 ### Installation
@@ -46,7 +45,7 @@ Recruiting information is retrieved by scraping 247Sports annual composite recru
     const maxPage = 5;
     ```
 
-- Inconsistencies in the recruit's name on ESPN and 247Sports may lead to the script not finding the recruit's ranking. Many differences are accounted for, such as **'John Doe Jr'** vs **'John Doe'** or **'A.J.'** vs **'AJ'**, which still lead to matches, but there are still rare exceptions where matching fails.
+- Inconsistencies in the player's name on ESPN and 247Sports may lead to the script not finding the player's ranking. Many differences are accounted for, such as **'John Doe Jr'** vs **'John Doe'** or **'A.J.'** vs **'AJ'**, which still lead to matches, but there are still rare exceptions where matching fails.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
