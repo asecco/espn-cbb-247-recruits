@@ -34,7 +34,7 @@ You can install the script as a **[Userscript](https://en.wikipedia.org/wiki/Use
 #### Userscript
 1. Install a [Userscript Manager](https://en.wikipedia.org/wiki/Userscript_manager) of your choice, such as [Tampermonkey](https://www.tampermonkey.net/).
 2. Install **ESPN CBB 247 Recruits** by clicking **[here](https://github.com/asecco/espn-cbb-247-recruits/releases/latest/download/espn-cbb-247-recruits.user.js)**.
-3. Browse a CBB player's ESPN page and view their HS recruit ranking.
+3. Done! Browse a CBB player's ESPN page and view their HS recruit ranking.
 
 ![example](https://github.com/asecco/espn-cbb-247-recruits/assets/40510223/f8ce2998-6135-402c-8bcf-36d0ac3dc889)
 
@@ -46,7 +46,7 @@ Recruiting information is retrieved by scraping 247Sports annual composite recru
     const maxPage = 5;
     ```
 
-- ESPN doesn't provide a player's HS class year, so I'm using the first year a player recorded any stats. This works great until instances where a player redshirted his freshman year, resulting in an incorrect year used in the search and no recruiting results being found.
+- Inconsistencies in the recruit's name on ESPN and 247Sports may lead to the script not finding the recruit's ranking. Many differences are accounted for, such as **'John Doe Jr'** vs **'John Doe'** or **'A.J.'** vs **'AJ'**, which still lead to matches, but there are still rare exceptions where matching fails.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

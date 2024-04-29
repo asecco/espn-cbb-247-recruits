@@ -2,7 +2,7 @@
 // @name         ESPN CBB 247 Recruits
 // @description  Adds high school ranking to ESPN College Basketball player pages
 // @namespace    https://github.com/asecco/espn-cbb-247-recruits
-// @version      1.0.0
+// @version      1.1.0
 // @author       Andrew https://github.com/asecco
 // @license      MIT
 // @grant        none
@@ -33,9 +33,9 @@ const removeExistingRecruitingInfo = () => {
     }
 }
 
-const recruitingSearch = async () => {
+const recruitingSearch = async (redshirt = undefined) => {
     const espnName = getPlayerName();
-    const espnYear = getPlayerYear();
+    const espnYear = redshirt || getPlayerYear();
     const baseUrl = `https://247sports.com/Season/${espnYear}-Basketball/CompositeRecruitRankings/`;
     const maxPage = 5;
     let playerFound = false;
@@ -98,7 +98,9 @@ const recruitingSearch = async () => {
         if (playerFound) break;
     }
 
-    if (!playerFound) {
+    if (!playerFound && redshirt === undefined) {
+        recruitingSearch(espnYear - 1);
+    } else if (!playerFound && redshirt !== undefined) {
         removeExistingRecruitingInfo();
         console.log(`Player '${espnName}' not found in the 247 rankings.`);
     }
