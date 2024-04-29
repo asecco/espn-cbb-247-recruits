@@ -24,7 +24,7 @@
   <br> 
 </p>
   
-<p align="center">Like what you see? Please consider giving **ESPN CBB 247 Recruits** a GitHub star ⭐, it will help a lot!</p>
+<p align="center">Like what you see? Please consider giving <strong>ESPN CBB 247 Recruits</strong> a GitHub star ⭐, it will help a lot!</p>
 
 ## Getting Started
 ### Installation
