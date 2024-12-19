@@ -45,7 +45,7 @@ Recruiting information is retrieved by scraping 247Sports annual composite recru
     const maxPage = 5;
     ```
 
-- Inconsistencies in the player's name on ESPN and 247Sports may lead to the script not finding the player's ranking. Many differences are accounted for, such as **'John Doe Jr'** vs **'John Doe'** or **'A.J.'** vs **'AJ'**, which still lead to matches, but there are still rare exceptions where matching fails.
+- Inconsistencies in the player's name on ESPN and 247Sports may lead to the script not finding the player's ranking.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

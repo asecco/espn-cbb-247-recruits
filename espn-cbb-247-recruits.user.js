@@ -17,9 +17,14 @@ const getPlayerName = () => {
 }
 
 const getPlayerYear = () => {
-    const playerYearElement = document.querySelector('.Table__TBODY tr:last-child');
-    let playerYear = playerYearElement ? playerYearElement.textContent.trim() : null;
-    return playerYear ? playerYear.split('-')[0] : null;
+    const playerYearElement = document.querySelectorAll('.Table__TBODY')[1];
+    const lastChild = playerYearElement ? playerYearElement.lastElementChild : null;
+
+    if (lastChild) {
+        let playerYear = lastChild.textContent.trim();
+        return playerYear ? playerYear.split('-')[0] : null;
+    }
+    return null;
 }
 
 const normalizeName = (name) => {
@@ -55,7 +60,7 @@ const recruitingSearch = async (redshirt = undefined) => {
             const listItems = doc.querySelectorAll('li.rankings-page__list-item');
             listItems.forEach(item => {
                 const recruit = item.querySelector('.recruit .rankings-page__name-link');
-                const rankColumn = item.querySelector('.rank-column .primary');
+                const rankColumn = item.querySelector('.rank-column .primary').childNodes[0];
                 const rating = item.querySelector('.rating .rankings-page__star-and-score');
 
                 const playerName = recruit ? recruit.textContent.trim() : 'N/A';
