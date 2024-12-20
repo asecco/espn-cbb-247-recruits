@@ -40,10 +40,10 @@ You can install the script as a **[Userscript](https://en.wikipedia.org/wiki/Use
 ## Limitations
 Recruiting information is retrieved by scraping 247Sports annual composite recruit rankings, however, this comes with some known limitations.
 - For efficiency in searching for a recruit's name in the rankings, I'm only looking through the first 5 pages(top 250 recruits). If you want to change this, replace the `maxPage` constant with a value of your choosing.
-  - **There's a max of ~10 pages with 50 recruits per page**
     ```js
     const maxPage = 5;
     ```
+    - There's a max of ~10 pages with 50 recruits per page
 
 - Inconsistencies in the player's name on ESPN and 247Sports may lead to the script not finding the player's ranking.
 
