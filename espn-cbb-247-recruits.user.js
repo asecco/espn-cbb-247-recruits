@@ -38,6 +38,29 @@ const removeExistingRecruitingInfo = () => {
     }
 }
 
+const updateRecruitingInfo = (ranking) => {
+    removeExistingRecruitingInfo();
+
+    const playerInfo = document.createElement('li');
+    playerInfo.classList.add('recruiting-info');
+    const div1 = document.createElement('div');
+    const div2 = document.createElement('div');
+
+    div1.classList.add('ttu');
+    div1.textContent = 'HS RANKING';
+
+    div2.classList.add('fw-medium', 'clr-black');
+    div2.textContent = ranking;
+
+    playerInfo.appendChild(div1);
+    playerInfo.appendChild(div2);
+
+    const playerBioList = document.querySelector('.PlayerHeader__Bio_List');
+    if (playerBioList) {
+        playerBioList.appendChild(playerInfo);
+    }
+};
+
 const recruitingSearch = async (redshirt = undefined) => {
     const espnName = getPlayerName();
     const espnYear = redshirt || getPlayerYear();
@@ -48,6 +71,8 @@ const recruitingSearch = async (redshirt = undefined) => {
     if (!espnName || !espnYear) {
         return;
     }
+
+    updateRecruitingInfo('Searching 247Sports...', false);
 
     for (let page = 1; page <= maxPage; page++) {
         const url = `${baseUrl}?page=${page}`;
@@ -76,23 +101,8 @@ const recruitingSearch = async (redshirt = undefined) => {
                 const espnNameNormalized = normalizeName(espnName);
 
                 if (playerNameNormalized === espnNameNormalized) {
-                    removeExistingRecruitingInfo();
-                    const playerInfo = document.createElement('li');
-                    playerInfo.classList.add('recruiting-info');
-                    const div1 = document.createElement('div');
-                    const div2 = document.createElement('div');
-
-                    div1.classList.add('ttu');
-                    div1.textContent = 'HS RANKING';
-
-                    div2.classList.add('fw-medium', 'clr-black');
-                    div2.textContent = `${starCount}⭐ #${rank}(${espnYear})`;
-
-                    playerInfo.appendChild(div1);
-                    playerInfo.appendChild(div2);
-
-                    const playerBioList = document.querySelector('.PlayerHeader__Bio_List');
-                    playerBioList.appendChild(playerInfo);
+                    const ranking = `${starCount}⭐ #${rank}(${espnYear})`;
+                    updateRecruitingInfo(ranking);
                     playerFound = true;
                 }
             });
@@ -103,11 +113,13 @@ const recruitingSearch = async (redshirt = undefined) => {
         if (playerFound) break;
     }
 
-    if (!playerFound && redshirt === undefined) {
-        recruitingSearch(espnYear - 1);
-    } else if (!playerFound && redshirt !== undefined) {
-        removeExistingRecruitingInfo();
-        console.log(`Player '${espnName}' not found in the 247 rankings.`);
+    if (!playerFound) {
+        if (redshirt === undefined) {
+            recruitingSearch(espnYear - 1);
+        } else {
+            const ranking = `0⭐ NR(${espnYear})`;
+            updateRecruitingInfo(ranking, true);
+        }
     }
 }
 
